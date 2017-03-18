@@ -17,15 +17,14 @@ if c >= 0:
         if i < a:
             A += "'"
         B += "'"
-        i += 1
     print("|-?p(" + A + "+p)=" + B, end="\n", file=fout)
     froot = open("Proofs/part11.proof", "r")
     expr_list = froot.readlines()
     froot.close()
     for i in range(len(expr_list)):
         print(expr_list[i], end="", file=fout)
-    print("@a(a+0=a)->" + A + "+0=" + A, end="", file=fout)
-    print(A + "+0=" + A, end="", file=fout)
+    print("@a(a+0=a)->" + A + "+0=" + A, end="\n", file=fout)
+    print(A + "+0=" + A, end="\n", file=fout)
     fpart = open("Proofs/part12.proof", "r")
     part = fpart.readlines()
     fpart.close()
@@ -37,7 +36,7 @@ if c >= 0:
     for i in range(0, c):
         print(S.replace('#', st), end="", file=fout)
         st += "'"
-    print("(" + A + "+" + C + ")=" + B + "->?p(" + A + "+p)=" + B + "\n" + "?p(" + A + "+p)=" + B, end="", file=fout)
+    print("(" + A + "+" + C + ")=" + B + "->?p(" + A + "+p)=" + B + "\n" + "?p(" + A + "+p)=" + B, end="\n", file=fout)
 else:
     A = B = "0"
     for i in range(0, a):
@@ -50,6 +49,7 @@ else:
     froot.close()
     for i in range(len(expr_list)):
         print(expr_list[i], end="", file=fout)
+    print(file=fout)
     c *= -1
     C = B = ""
     for i in range(0, c - 1):
