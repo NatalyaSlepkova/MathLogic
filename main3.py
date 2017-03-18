@@ -18,7 +18,7 @@ if c >= 0:
             A += "'"
         B += "'"
         i += 1
-    print("|-?p(" + A + "+p)=" + B, end="", file=fout)
+    print("|-?p(" + A + "+p)=" + B, end="\n", file=fout)
     froot = open("Proofs/part11.proof", "r")
     expr_list = froot.readlines()
     froot.close()
